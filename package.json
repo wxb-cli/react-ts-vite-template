@@ -25,6 +25,11 @@
       "git add ."
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo 'git commit trigger husky pre-commit hook' "
+    }
+  },
   "dependencies": {
     "eslint": "^8.25.0",
     "less": "^4.1.3",
