@@ -11,10 +11,10 @@
     "prepare": "husky install",
     "fix": "eslint src/**/*.*  --fix",
     "lint:style": "stylelint \"src/**/*.(less|scss|css)\" --fix --custom-syntax postcss-less"
-  },
+  }, 
   "lint-staged": {
     "**/*.{js,jsx,tsx,ts}": [
-      "eslint src --fix",
+      "eslint  --fix",
       "git add ."
     ],
     "**/*.*.{less}": [
