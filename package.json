@@ -5,11 +5,25 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc && vite build",
+    "build": "rm -rf ./dist && tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint src",
+    "lint": "npx --no -- lint-staged",
+    "prepare": "husky install",
     "fix": "eslint src/**/*.*  --fix",
     "styleLint": "stylelint \"src/**/*.(less|scss|css)\" --fix --custom-syntax postcss-less"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,tsx,ts}": [
+      "eslint src",
+      "git add ."
+    ],
+    "**/*.*.{less}": [
+      "npm run lint:style",
+      "git add ."
+    ],
+    "*": [
+      "git add ."
+    ]
   },
   "dependencies": {
     "eslint": "^8.25.0",
@@ -30,6 +44,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
     "postcss-less": "^6.0.0",
     "prettier": "^2.7.1",
     "react-router-config": "^5.1.1",
