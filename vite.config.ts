@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import eslintPlugin from 'vite-plugin-eslint'; // 引入
+import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -15,6 +16,11 @@ export default defineConfig({
   base: './',
   server: {
     port: 1245,
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
   },
   css: {
     //* css模块化
