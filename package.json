@@ -47,7 +47,11 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,tsx,ts}": [
-      "eslint --cache --fix",
+      "eslint src",
+      "git add ."
+    ],
+    "**/*.*.less": [
+      "npm run lint:style",
       "git add ."
     ],
     "*": [
