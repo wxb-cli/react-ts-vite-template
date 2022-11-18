@@ -57,7 +57,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'git commit trigger husky pre-commit hook' "
+      "pre-commit": "echo 'git commit trigger husky pre-commit hook' ",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
