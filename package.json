@@ -20,6 +20,8 @@
     "vite-plugin-eslint": "^1.8.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
@@ -28,6 +30,7 @@
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
     "@vitejs/plugin-react": "^2.1.0",
+    "commitlint": "^17.2.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
@@ -47,7 +50,7 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,tsx,ts}": [
-      "eslint src",
+      "eslint src --cache --fix",
       "git add ."
     ],
     "**/*.*.less": [
@@ -62,7 +65,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "echo 'git commit trigger husky pre-commit hook' ",
-      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
 }
