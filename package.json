@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "npx --no -- lint-staged",
     "prepare": "husky install",
-    "fix": "eslint src/**/*.*  --fix"
+    "fix": "eslint src/**/*.*  --fix",
+    "lint:style": "stylelint  --fix"
   },
   "dependencies": {
     "antd": "^5.3.2",
@@ -52,6 +53,10 @@
   "lint-staged": {
     "**/*.{js,jsx,tsx,ts}": [
       "eslint src --cache --fix",
+      "git add ."
+    ],
+    "**/*.*.less": [
+      "npm run lint:style",
       "git add ."
     ],
     "*": [
