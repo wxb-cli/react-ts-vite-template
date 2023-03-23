@@ -37,4 +37,13 @@ export default defineConfig({
       },
     },
   },
+  // build: {
+  //   rollupOptions: {
+  //     output: {
+  //       manualChunks: {
+  //         antd: ['antd'],
+  //       },
+  //     },
+  //   },
+  // },
 });
