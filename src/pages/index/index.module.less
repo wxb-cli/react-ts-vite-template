@@ -1,0 +1,35 @@
+.layout {
+  min-height: 100vh;
+
+  .siderBox {
+    .siderTitle {
+      margin: 16px;
+      height: 32px;
+      font-size: 16px;
+      color: #FFFFFF;
+
+      img {
+        display: none;
+        margin-right: 4px;
+        width: 32px;
+        height: 32px;
+      }
+
+      span {
+        display: inline-block;
+      }
+    }
+
+    &.collapsedSider {
+      .siderTitle {
+        img {
+          display: inline-block;
+        }
+
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}

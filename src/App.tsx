@@ -22,9 +22,6 @@ function useAuth() {
     !whitelist.includes(location.pathname)
   );
   useEffect(() => {
-    if (whitelist.includes(location.pathname)) {
-      return;
-    }
     checkAuth().then(() => {
       setLoading(false);
     });
@@ -34,7 +31,6 @@ function useAuth() {
 
 function App() {
   const { loading } = useAuth();
-
   if (loading) {
     return <RouteAuthLoading />;
   }

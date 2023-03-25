@@ -27,6 +27,9 @@ const Login = () => {
   return (
     <div className={styles.loginWrapper}>
       <div className={styles.main}>
+        <div className={styles.logoBox}>
+          <div className={styles.logo} />
+        </div>
         <h1 className={styles.title}>记账小册后台管理系统</h1>
         <div className={styles.fnContent}>
           <div className={styles.inputBox}>

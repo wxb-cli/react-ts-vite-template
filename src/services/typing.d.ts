@@ -11,4 +11,9 @@ declare namespace API {
       level: number;
     };
   }
+
+  interface QueryFeedbackParams {
+    limit?: number;
+    page?: number;
+  }
 }

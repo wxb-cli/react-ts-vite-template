@@ -11,3 +11,9 @@ export const fetchLogin = async (params: Expand<API.LoginParams>) =>
  */
 export const checkAuth = async () =>
   axios.post<any, ExpandRecursively<null>>('/auth', {});
+
+/**
+ * 校验权限
+ */
+export const queryFeedback = async (params: Expand<API.QueryFeedbackParams>) =>
+  axios.post<any, ExpandRecursively<null>>('/queryFeedback', params);
